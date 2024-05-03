@@ -12,9 +12,9 @@
 #define sz(x) (int)(x).size()
 #define int ll
 // Codeforces
-#define ntest int t; cin >> t; while (t--) solve();
-#define yes cout << "yes\n";
-#define no cout << "no\n";
+#define ntest int t; cin >> t; while (t--) solve()
+#define yes cout << "yes\n"
+#define no cout << "no\n"
 using namespace std;
 typedef long long ll;
 typedef long double db;
