@@ -9,8 +9,6 @@
 #define all(x) (x).begin(), (x).end()
 #define rall(x) (x).rbegin(), (x).rend()
 #define bit(i, x) ((x >> i) & 1)
-#define turn_on(i, x) (x | (1ll << i))
-#define turn_off(i, x) (x & ~(1ll << i))
 #define sz(x) (int)(x).size()
 #define ntest int t; cin >> t; while (t--) solve()
 #define __lcm(a, b) (1ll * ((a) / __gcd((a), (b))) * (b))
