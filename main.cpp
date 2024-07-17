@@ -130,7 +130,8 @@ struct DSU {
         for (int i = 1; i <= n; i++) make_set(i);
     }
     int Find(int u) {
-        return par[u] ? par[u] = Find(par[u]) : u;
+        // return par[u] ? par[u] = Find(par[u]) : u;
+        return par[u] == u ? u : par[u] = Find(par[u]);
     }
     bool Merge(int u, int v) {
         u = Find(u);
