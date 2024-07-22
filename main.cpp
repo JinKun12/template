@@ -209,6 +209,68 @@ struct LCA {
         return par[u][0];
     }
 };
+struct Flow {
+    const int inf = 1e9;
+    int n, s, t;
+    vector<vi> a;
+    vector<edge> e;
+    vi d, cur;
+    Flow(int n, int s, int t) : n(n), s(s), t(t) {
+        a.resize(n + 1);
+        d.resize(n + 1);
+        cur.resize(n + 1);
+    }
+    void AddEdge(int u, int v, int c) {
+        a[u].pb(sz(e));
+        e.pb({u, v, c, 0});
+        a[v].pb(sz(e));
+        e.pb({v, u, 0, 0});
+    }
+    bool bfs() {
+        queue<int> q;
+        fill(all(d), -1);
+        d[s] = 1;
+        q.push(s);
+        while (!q.empty()) {
+            int u = q.front(); q.pop();
+            for (int id : a[u]) {
+                int v = e[id].v;
+                if (d[v] == -1 && e[id].f < e[id].c) {
+                    d[v] = d[u] + 1;
+                    q.push(v);
+                }
+            }
+        }
+        return d[t] >= 0;
+    }
+    int dfs(int u, int f) {
+        if (f == 0) return 0;
+        if (u == t) return f;
+        for (; cur[u] < sz(a[u]); cur[u]++) {
+            int id = a[u][cur[u]], v = e[id].v;
+            if (d[v] != d[u] + 1) continue;
+            int delta = dfs(v, min(f, e[id].c - e[id].f));
+            if (delta) {
+                e[id].f += delta;
+                e[id ^ 1].f -= delta;
+                return delta;
+            }
+        }
+        return 0;
+    }
+    int MaxFlow() {
+        int f = 0;
+        while (bfs()) {
+            fill(all(cur), 0);
+            int delta = dfs(s, 1e9);
+            while (delta) {
+                f += delta;
+                delta = dfs(s, 1e9);
+            }
+        }
+        return f;
+    }
+};
 main() {
     cin.tie(nullptr)->sync_with_stdio(false);
     if (fopen(Task".inp", "r")) {
