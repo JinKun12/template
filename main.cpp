@@ -210,7 +210,7 @@ struct LCA {
     }
 };
 struct Flow {
-    const int inf = 1e9;
+    const int inf = 2e18;
     int n, s, t;
     vector<vi> a;
     vector<edge> e;
@@ -262,10 +262,10 @@ struct Flow {
         int f = 0;
         while (bfs()) {
             fill(all(cur), 0);
-            int delta = dfs(s, 1e9);
+            int delta = dfs(s, inf);
             while (delta) {
                 f += delta;
-                delta = dfs(s, 1e9);
+                delta = dfs(s, inf);
             }
         }
         return f;
