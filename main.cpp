@@ -209,6 +209,9 @@ struct LCA {
         return par[u][0];
     }
 };
+struct edge {
+    int u, v, c, f;
+};
 struct Flow {
     const int inf = 2e18;
     int n, s, t;
