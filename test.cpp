@@ -27,6 +27,7 @@ typedef pair<int, int> pii;
 typedef pair<ll, ll> pll;
 typedef vector<int> vi;
 typedef vector<pii> vii;
+mt19937_64 rng(chrono::steady_clock::now().time_since_epoch().count());
 main() {
     cin.tie(nullptr)->sync_with_stdio(false);
     //freopen(Task".inp", "r", stdin);
