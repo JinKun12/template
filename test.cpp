@@ -3,6 +3,7 @@
 #pragma GCC target("avx2")
 #include <bits/stdc++.h>
 #define Task "task"
+#define Nyaa main
 #define fi first
 #define se second
 #define pb push_back
