@@ -69,39 +69,23 @@ int lca(int a, int b) {
     if (tim[a] > tim[b]) swap(a, b);
     return get(1, 1, cnt, tim[a], tim[b]);
 }
-void solve() {
-    for (int i = 1; i <= n; i++) adj[i].clear();
-    memset(T, 0, sizeof T);
-    memset(tim, 0, sizeof tim);
-    memset(tour, 0, sizeof tour);
+Nyaa() {
+    cin.tie(nullptr)->sync_with_stdio(false);
+    //freopen(Task".inp", "r", stdin);
+    int n; cin >> n;
     for (int i = 1, u, v; i < n; i++) {
         cin >> u >> v;
         adj[u].pb(v);
         adj[v].pb(u);
     }
-    cnt = 0;
     dfs(1);
     init(1, 1, cnt);
     cin >> m;
     int root = 1, u, v;
     while (m--) {
-        char c; cin >> c;
-        if (c == '!') cin >> root;
-        else {
-            cin >> u >> v;
-            int ur = lca(u, root);
-            int vr = lca(v, root);
-            int uv = lca(u, v);
-            if (ur == vr) cout << uv << '\n';
-            else if (ur == uv) cout << vr << '\n';
-            else cout << ur << '\n';
-        }
+        cin >> u >> v;
+        cout << lca(u, v) << '\n';
     }
-}
-Nyaa() {
-    cin.tie(nullptr)->sync_with_stdio(false);
-    //freopen(Task".inp", "r", stdin);
-    while (cin >> n && n) solve();
     return 0;
 }
 // I wish I was a cat, no school, no work, just meow meow.
