@@ -41,12 +41,12 @@ stack<int> st;
 void dfs(int u, int p = -1) {
     id[u] = low[u] = ++cnt;
     st.push(u);
-    bool flag = false;
+//    bool flag = false;
     for (int v : adj[u]) {
-        if (v == p && !flag) {
-            flag = true;
-            continue;
-        }
+//        if (v == p && !flag) {
+//            flag = true;
+//            continue;
+//        }
         if (id[v]) cmin(low[u], id[v]);
         else {
             dfs(v, u);
