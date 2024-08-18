@@ -71,7 +71,7 @@ Nyaa() {
         adj[u].pb(v);
         adj[v].pb(u);
     }
-    for (int u = 0; u < n; u++) if (!id[u])
+    for (int u = 1; u <= n; u++) if (!id[u])
         dfs(u);
     cout << scc << '\n';
     for (int i = 0; i < scc; i++) {
