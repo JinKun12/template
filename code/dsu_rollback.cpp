@@ -15,7 +15,7 @@ struct DSU {
         history.clear();
     }
     int Find(int u) {
-        return par[u] == u ? u : Find(par[u]);
+        return par[u] == u ? u : par[u] = Find(par[u]);
     }
     bool Merge(int u, int v) {
         u = Find(u);
