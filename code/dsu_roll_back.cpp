@@ -17,6 +17,9 @@ struct DSU {
     int Find(int u) {
         return par[u] == u ? u : par[u] = Find(par[u]);
     }
+    bool same(int u, int v) {
+        return Find(u) == Find(v);
+    }
     bool Merge(int u, int v) {
         u = Find(u);
         v = Find(v);
