@@ -31,7 +31,7 @@ typedef vector<pii> vii;
 mt19937_64 rng(chrono::steady_clock::now().time_since_epoch().count());
 const int N = 1e5 + 10;
 const int S = 447;
-int n, m, a[N], cnt[N / S][N];
+int n, m, a[N], cnt[N / S + 10][N];
 int res[N], dem[N], curRes = 0;
 struct query {
     int l, r, id;
