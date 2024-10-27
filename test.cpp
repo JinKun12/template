@@ -33,6 +33,7 @@ Nyaa() {
     cin.tie(nullptr)->sync_with_stdio(false);
     //freopen(Task".inp", "r", stdin);
 
+    cerr << "\nTime elapsed: " << 1000.0 * clock() / CLOCKS_PER_SEC << " ms.\n";
     return 0;
 }
 // I wish I was a cat, no school, no work, just meow meow.
