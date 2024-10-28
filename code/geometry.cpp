@@ -159,3 +159,10 @@ template<class T> bool parallel(Point<T> a, Point<T> b, Point<T> c, Point<T> d){
 template<class T> long double RayToPoint(Point<T> a, Point<T> b, Point<T> c){
   return (dot(a, b, c)>=0?LineToPoint(a, b, c):min(length(a-c), length(b-c)));
 }
+
+// line L, segment AB
+template<class T> bool intersectLineSegment(Line<T> L, Point<T> a, Point<T> b) {
+  T fa = L.func(a.x, a.y);
+  T fb = L.func(b.x, b.y);
+  return fa * fb <= 0;
+}
