@@ -9,7 +9,7 @@
 #define pb push_back
 #define all(x) (x).begin(), (x).end()
 #define rall(x) (x).rbegin(), (x).rend()
-#define bit(i, x) ((x >> i) & 1)
+#define bit(i, x) (((x) >> (i)) & 1)
 #define sz(x) (int)(x).size()
 #define ntest int t; cin >> t; while (t--) solve()
 #define __lcm(a, b) (1ll * ((a) / __gcd((a), (b))) * (b))
