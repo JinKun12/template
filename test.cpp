@@ -31,7 +31,10 @@ typedef vector<pii> vii;
 mt19937_64 rng(chrono::steady_clock::now().time_since_epoch().count());
 Nyaa() {
     cin.tie(nullptr)->sync_with_stdio(false);
-    //freopen(Task".inp", "r", stdin);
+#ifdef ONLINE_JUDGE
+    freopen(Task".inp", "r", stdin);
+    freopen(Task".out", "w", stdout);
+#endif // ONLINE_JUDGE
 
     cerr << "\nTime elapsed: " << 1000.0 * clock() / CLOCKS_PER_SEC << " ms.\n";
     return 0;
