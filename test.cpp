@@ -1,6 +1,7 @@
 /// Created by Zylenox
 #pragma GCC optimize("O3", "unroll-loops")
 #pragma GCC target("avx2")
+#include <bits/allocator.h>
 #include <bits/stdc++.h>
 #define Task "task"
 #define Nyaa main
